@@ -8,7 +8,7 @@
             "runtime":"python3.9"
         }
     },{
-        "src":"builds_files.sh",
+        "src":"build_files.sh",
         "use":"@vercel/static-build",
         "config":{
             "distdir":"staticfiles_build"
