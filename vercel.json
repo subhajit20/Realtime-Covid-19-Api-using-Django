@@ -1,7 +1,7 @@
 {
     "version":2,
     "builds":[{
-        "src":"covid19_project/asgi.py",
+        "src":"covid19_project/wsgi.py",
         "use":"@vercel/python",
         "config":{
             "maxlamdasize":"15mb",
@@ -22,7 +22,7 @@
             "dest":"/static/$1"
         },{
             "src":"/(.*)",
-            "dest":"covid19_project/asgi.py"
+            "dest":"covid19_project/wsgi.py"
         }
     ]
 }
