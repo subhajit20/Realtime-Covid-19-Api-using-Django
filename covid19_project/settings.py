@@ -19,6 +19,8 @@ ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
+    "channels",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "covid19app",
+    "realtimedataload",
     "rest_framework",
     "corsheaders"
 ]
@@ -48,7 +51,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:9000",
     "http://127.0.0.1:5500",
-    "https://subhajit20.github.io/",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -90,7 +92,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "covid19_project.wsgi.application"
+# WSGI_APPLICATION = "covid19_project.wsgi.application"
+ASGI_APPLICATION = 'covid19_project.asgi.application'
+
+# inmemory channel layer
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Database

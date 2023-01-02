@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializer import CountryNameSerializer
+from channels.layers import channel_layers,get_channel_layer
 # Create your views here.
 
 # internal imports
@@ -29,6 +30,7 @@ def GetCovid19data(request):
             "error":"Something went wrong..."
         })
 
+# layer = get_channel_layer()
 @api_view(["POST"])
 def SearchbyCountryName(request):
     try:
